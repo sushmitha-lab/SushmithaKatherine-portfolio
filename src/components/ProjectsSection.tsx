@@ -6,6 +6,7 @@ const projects = [
   {
     title: 'Freddie Mac Mortgage Risk Analytics',
     subtitle: 'End-to-end mortgage risk data pipeline with dimensional modeling',
+    image: '/projects/freddie-mac-architecture.svg',
     description: 'Built an end-to-end data pipeline on 150,000 loans and 6.2M monthly real estate loan performance records, designing a dimensional star schema in dbt with 11 automated data quality tests enforcing key uniqueness and referential integrity.',
     technologies: ['Snowflake', 'dbt', 'Python', 'Streamlit', 'Git'],
     link: 'https://github.com/sushmitha-lab/Freddie-mac-mortgage-risk-analytics',
@@ -65,7 +66,11 @@ const ProjectsSection = () => {
               }`}>
                 {/* ✏️ replace with <img src="/projects/your-image.png" ... /> if you have a diagram/screenshot */}
                 <div className="relative h-44 overflow-hidden bg-gradient-to-br from-secondary to-card flex items-center justify-center">
-                  <ImageIcon className="w-10 h-10 text-border" />
+                  {(project as any).image ? (
+                    <img src={(project as any).image} alt={project.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <ImageIcon className="w-10 h-10 text-border" />
+                  )}
                 </div>
 
                 <div className="p-4 flex flex-col flex-1">

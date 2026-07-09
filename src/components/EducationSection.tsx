@@ -1,6 +1,6 @@
 import { GraduationCap, Calendar, MapPin, BookOpen } from 'lucide-react';
 
-// ✏️ Coursework lists are placeholders — swap in your actual courses
+// ✏️ VTU coursework list is still a placeholder — swap in your actual courses
 const educationData = [
   {
     degree: "Master's in Data Analytics, Conc. Applied Machine Learning",
@@ -10,7 +10,16 @@ const educationData = [
     period: 'Sep 2024 – Jun 2026',
     status: 'Completed',
     current: false,
-    coursework: ['Data Analytics', 'Applied Machine Learning'],
+    coursework: [
+      'Database Management for Analytics',
+      'Data Mining',
+      'Algorithms & Optimization',
+      'Statistical Learning',
+      'Data Visualization',
+      'Natural Language Processing',
+      'Pattern Recognition',
+      'Big Data Systems',
+    ],
     bgColor: '#0E2A26',
   },
   {
