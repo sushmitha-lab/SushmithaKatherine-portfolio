@@ -5,7 +5,7 @@ const experiences = [
   {
     title: 'Data Engineer Intern',
     company: 'Dell Technologies',
-    logo: '/logos/dell.jpeg',
+    logo: '/logos/dell.png',
     location: 'Franklin, MA',
     period: 'Jul 2025 – Dec 2025',
     signatureImpact: 'Built dbt-based data models translating stakeholder requirements into structured, tested, documented analytical datasets.',
@@ -22,7 +22,7 @@ const experiences = [
   {
     title: 'Data Analyst',
     company: 'Deloitte',
-    logo: '/logos/deloitte.png',
+    logo: '/logos/deloitte-dark.png',
     location: 'Hyderabad, India',
     period: 'Feb 2022 – Sep 2024',
     signatureImpact: 'Built scalable ELT pipelines processing 10M+ records per run across 3 enterprise client engagements.',
@@ -118,9 +118,7 @@ const ExperienceSection = () => {
                         )}
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="h-7 px-1.5 rounded-md bg-white flex items-center justify-center">
-                          <img src={exp.logo} alt={exp.company} className="h-5 w-auto object-contain" />
-                        </div>
+                        <img src={exp.logo} alt={exp.company} className="h-6 w-auto object-contain" />
                         <p className="text-primary font-semibold text-lg">{exp.company}</p>
                       </div>
                     </div>
