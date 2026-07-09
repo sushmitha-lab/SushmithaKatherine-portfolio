@@ -2,29 +2,27 @@ import { Layers, ArrowRight, Github, Image as ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
-// ✏️ Replace with your real projects (add/remove entries freely)
 const projects = [
   {
-    title: 'Project Name',
-    subtitle: 'One-line subtitle describing the project',
-    description: 'A two to three sentence description of the problem, your approach, and the outcome.',
-    technologies: ['Tech 1', 'Tech 2', 'Tech 3'],
-    link: '#',
-    githubLink: '#',
+    title: 'Freddie Mac Mortgage Risk Analytics',
+    subtitle: 'End-to-end mortgage risk data pipeline with dimensional modeling',
+    description: 'Built an end-to-end data pipeline on 150,000 loans and 6.2M monthly real estate loan performance records, designing a dimensional star schema in dbt with 11 automated data quality tests enforcing key uniqueness and referential integrity.',
+    technologies: ['Snowflake', 'dbt', 'Python', 'Streamlit', 'Git'],
+    link: 'https://github.com/sushmitha-lab/Freddie-mac-mortgage-risk-analytics',
   },
   {
-    title: 'Project Name',
-    subtitle: 'One-line subtitle describing the project',
-    description: 'A two to three sentence description of the problem, your approach, and the outcome.',
-    technologies: ['Tech 1', 'Tech 2', 'Tech 3'],
-    link: '#',
+    title: 'AWS Serverless ELT Pipeline',
+    subtitle: 'Serverless cloud ELT pipeline for NOAA weather data',
+    description: 'Built a serverless, cloud-deployed ELT pipeline ingesting 1.87GB of NOAA weather data (24,630 files) into S3, using Glue PySpark to convert CSV to partitioned, Snappy-compressed Parquet — cutting Athena query costs by roughly 52x.',
+    technologies: ['AWS Glue (PySpark)', 'S3', 'Athena', 'Python', 'Git'],
+    link: 'https://github.com/sushmitha-lab/AWS-serverless-elt-pipeline',
   },
   {
-    title: 'Project Name',
-    subtitle: 'One-line subtitle describing the project',
-    description: 'A two to three sentence description of the problem, your approach, and the outcome.',
-    technologies: ['Tech 1', 'Tech 2', 'Tech 3'],
-    link: '#',
+    title: 'Olist E-Commerce Intelligence Platform',
+    subtitle: 'Databricks medallion architecture for e-commerce analytics',
+    description: 'Built a Databricks medallion architecture pipeline ingesting 100K+ e-commerce orders across 9 Delta Lake tables, validating and normalizing order, payment, and inventory-adjacent data with schema checks at each layer.',
+    technologies: ['Databricks', 'Delta Lake', 'PySpark', 'MLflow'],
+    link: 'https://github.com/sushmitha-lab/Olist-ecommerce-intelligence-databricks',
   },
 ];
 
@@ -48,7 +46,7 @@ const ProjectsSection = () => {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real-world work demonstrating your end-to-end capabilities.
+            Real-world data pipelines and analytics platforms across finance, climate, and e-commerce data.
           </p>
         </div>
 
@@ -65,7 +63,7 @@ const ProjectsSection = () => {
                   ? 'bg-gradient-to-br from-card via-card to-primary/5 border-primary/40 shadow-xl shadow-primary/10 scale-[1.02]'
                   : 'bg-card/50 border-border hover:border-primary/30'
               }`}>
-                {/* ✏️ replace with <img src="/projects/your-image.png" ... /> */}
+                {/* ✏️ replace with <img src="/projects/your-image.png" ... /> if you have a diagram/screenshot */}
                 <div className="relative h-44 overflow-hidden bg-gradient-to-br from-secondary to-card flex items-center justify-center">
                   <ImageIcon className="w-10 h-10 text-border" />
                 </div>
@@ -93,22 +91,15 @@ const ProjectsSection = () => {
                     <Button
                       size="sm"
                       asChild
-                      className={`group/btn text-primary-foreground border-0 ${(project as any).githubLink ? 'flex-1' : 'w-full'}`}
+                      className="w-full text-primary-foreground border-0"
                       style={{ backgroundColor: 'rgba(31, 182, 201, 0.25)', color: '#B6C6D3' }}
                     >
                       <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:bg-primary/35 transition-colors">
-                        View Project Details
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                        <Github className="w-4 h-4" />
+                        View on GitHub
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </a>
                     </Button>
-                    {(project as any).githubLink && (
-                      <Button size="sm" asChild className="group/gh border-0" style={{ backgroundColor: 'rgba(31, 182, 201, 0.25)', color: '#B6C6D3' }}>
-                        <a href={(project as any).githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:bg-primary/35 transition-colors">
-                          <Github className="w-4 h-4" />
-                          GitHub
-                        </a>
-                      </Button>
-                    )}
                   </div>
                 </div>
               </div>
@@ -117,9 +108,8 @@ const ProjectsSection = () => {
         </div>
 
         <div className="flex justify-center mt-12">
-          {/* ✏️ point at your GitHub profile */}
           <a
-            href="#"
+            href="https://github.com/sushmitha-lab"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 hover:border-primary/40 transition-all"

@@ -1,10 +1,9 @@
 import { Award, ArrowRight, BadgeCheck } from 'lucide-react';
 
-// ✏️ Replace with your real certifications
 const certifications = [
-  { name: 'Certification Name', credentialLink: '#' },
-  { name: 'Certification Name', credentialLink: null as string | null },
-  { name: 'Certification Name', credentialLink: '#' },
+  { name: 'Alteryx Designer Core', credentialLink: 'https://www.credly.com/badges/e9ac12de-1592-4f93-806c-ea0f1b8a129d' },
+  { name: 'Python Programming — HackerRank', credentialLink: 'https://www.hackerrank.com/certificates/17b1ee641110' },
+  { name: 'SQL (Advanced) — HackerRank', credentialLink: 'https://www.hackerrank.com/certificates/iframe/59169eb44b89' },
 ];
 
 const CertificationsSection = () => {
@@ -25,7 +24,7 @@ const CertificationsSection = () => {
             <span className="gradient-text">Certifications</span>
           </h2>
           <p className="text-sm max-w-2xl mx-auto" style={{ color: '#9CA3AF' }}>
-            Industry-recognized certifications validating your expertise.
+            Industry-recognized certifications validating core analytics and engineering skills.
           </p>
         </div>
 
@@ -44,27 +43,22 @@ const CertificationsSection = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              {/* ✏️ replace with <img src="/certs/logo.png" ... /> */}
               <div className="w-14 h-14 rounded-xl bg-white p-2 flex items-center justify-center mb-4">
                 <BadgeCheck className="w-full h-full text-slate-700" />
               </div>
 
               <h3 className="text-base font-semibold mb-4" style={{ color: '#E5E7EB' }}>{cert.name}</h3>
 
-              {cert.credentialLink ? (
-                <a
-                  href={cert.credentialLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
-                  style={{ color: '#22D3EE' }}
-                >
-                  Show Credential
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              ) : (
-                <span className="text-sm font-medium" style={{ color: '#6B7280' }}>Show Credential</span>
-              )}
+              <a
+                href={cert.credentialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
+                style={{ color: '#22D3EE' }}
+              >
+                Show Credential
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           ))}
         </div>

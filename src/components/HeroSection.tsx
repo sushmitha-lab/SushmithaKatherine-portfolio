@@ -109,10 +109,11 @@ const HeroSection = () => {
             {/* Summary */}
             <div className="space-y-2">
               <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-                I turn messy, large-scale data into governed, decision-ready systems — dbt models,
-                ELT pipelines, and BI dashboards that teams actually trust and use. Over 4+ years
-                at Amazon, Deloitte, and Dell, I've built the kind of analytics infrastructure that
-                holds up: tested, documented, and built for self-service.
+                I build Python and SQL-driven analytical tools and data models — including hands-on
+                work with loan-level real estate and mortgage risk data. Over 4+ years, I've partnered
+                with cross-functional stakeholders across enterprise engagements to turn raw, ambiguous
+                data into governed, quality-controlled solutions, with Tableau and Power BI dashboards
+                that make it usable.
               </p>
               <p className="text-sm text-muted-foreground/70">
                 M.S. in Data Analytics, Northeastern University · Open to full-time roles

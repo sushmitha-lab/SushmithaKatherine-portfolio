@@ -1,13 +1,13 @@
-import { Sparkles, Code2, Cloud, Database, BarChart3, Cpu, Zap } from 'lucide-react';
+import { Sparkles, Code2, Cloud, Database, BarChart3, ShieldCheck, GitBranch, Workflow } from 'lucide-react';
 
-// ✏️ Replace with your real skill groups
 const skillGroups = [
-  { title: 'Category One', icon: Code2, skills: ['Skill', 'Skill', 'Skill'] },
-  { title: 'Category Two', icon: Cloud, skills: ['Skill', 'Skill', 'Skill'] },
-  { title: 'Category Three', icon: Database, skills: ['Skill', 'Skill', 'Skill'] },
-  { title: 'Category Four', icon: BarChart3, skills: ['Skill', 'Skill', 'Skill'] },
-  { title: 'Category Five', icon: Zap, skills: ['Skill', 'Skill'] },
-  { title: 'Category Six', icon: Cpu, skills: ['Skill', 'Skill', 'Skill'] },
+  { title: 'Languages & Query', icon: Code2, skills: ['Python', 'SQL (Advanced)', 'NumPy', 'Pandas', 'R'] },
+  { title: 'Data Modeling & Warehousing', icon: Database, skills: ['Snowflake', 'Dimensional Modeling', 'Star Schema Design', 'BigQuery (familiar)'] },
+  { title: 'Data Governance & Quality', icon: ShieldCheck, skills: ['dbt Tests', 'Schema Validation', 'Data Lineage', 'Metadata Docs', 'Observability'] },
+  { title: 'BI & Visualization', icon: BarChart3, skills: ['Tableau (Advanced)', 'Power BI', 'DAX', 'Streamlit'] },
+  { title: 'Version Control & Deployment', icon: GitBranch, skills: ['Git', 'GitHub', 'GitHub Actions (CI/CD)'] },
+  { title: 'Cloud', icon: Cloud, skills: ['AWS (S3, Glue, Athena)', 'Azure', 'GCP'] },
+  { title: 'ETL/ELT & Orchestration', icon: Workflow, skills: ['Airflow', 'dbt (Cloud + Core)', 'AWS Glue (PySpark)'] },
 ];
 
 const SkillsSection = () => {
@@ -28,7 +28,7 @@ const SkillsSection = () => {
             Skills & <span className="gradient-text">Technologies</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for the kind of work you do.
+            A comprehensive toolkit for building governed, end-to-end data solutions.
           </p>
         </div>
 
