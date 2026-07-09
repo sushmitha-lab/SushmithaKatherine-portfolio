@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'Freddie Mac Mortgage Risk Analytics',
     subtitle: 'End-to-end mortgage risk data pipeline with dimensional modeling',
-    image: '/projects/freddie-mac-architecture.svg',
+    image: '/projects/freddie-mac-art.svg',
     description: 'Built an end-to-end data pipeline on 150,000 loans and 6.2M monthly real estate loan performance records, designing a dimensional star schema in dbt with 11 automated data quality tests enforcing key uniqueness and referential integrity.',
     technologies: ['Snowflake', 'dbt', 'Python', 'Streamlit', 'Git'],
     link: 'https://github.com/sushmitha-lab/Freddie-mac-mortgage-risk-analytics',
@@ -14,6 +14,7 @@ const projects = [
   {
     title: 'AWS Serverless ELT Pipeline',
     subtitle: 'Serverless cloud ELT pipeline for NOAA weather data',
+    image: '/projects/aws-elt-pipes.svg',
     description: 'Built a serverless, cloud-deployed ELT pipeline ingesting 1.87GB of NOAA weather data (24,630 files) into S3, using Glue PySpark to convert CSV to partitioned, Snappy-compressed Parquet — cutting Athena query costs by roughly 52x.',
     technologies: ['AWS Glue (PySpark)', 'S3', 'Athena', 'Python', 'Git'],
     link: 'https://github.com/sushmitha-lab/AWS-serverless-elt-pipeline',
@@ -21,6 +22,7 @@ const projects = [
   {
     title: 'Olist E-Commerce Intelligence Platform',
     subtitle: 'Databricks medallion architecture for e-commerce analytics',
+    image: '/projects/olist-medallion.svg',
     description: 'Built a Databricks medallion architecture pipeline ingesting 100K+ e-commerce orders across 9 Delta Lake tables, validating and normalizing order, payment, and inventory-adjacent data with schema checks at each layer.',
     technologies: ['Databricks', 'Delta Lake', 'PySpark', 'MLflow'],
     link: 'https://github.com/sushmitha-lab/Olist-ecommerce-intelligence-databricks',
