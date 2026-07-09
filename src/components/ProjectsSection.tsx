@@ -27,6 +27,14 @@ const projects = [
     technologies: ['Databricks', 'Delta Lake', 'PySpark', 'MLflow'],
     link: 'https://github.com/sushmitha-lab/Olist-ecommerce-intelligence-databricks',
   },
+  {
+    title: 'Global Power Dynamics',
+    subtitle: 'Tableau dashboards analyzing global energy trends and nuclear safety',
+    image: '/projects/global-power-dashboard.png',
+    description: 'Built a set of interactive Tableau dashboards analyzing global power generation trends — energy source diversity, nuclear energy growth since the 1970s, and death rates per TWh across energy sources — using the Global Power Plant Database, World Nuclear Energy Generation, and Death Rates from Energy Production datasets.',
+    technologies: ['Tableau', 'Data Visualization', 'CSV'],
+    link: 'https://github.com/sushmitha-lab/Global-power-dynamics-tableau',
+  },
 ];
 
 const ProjectsSection = () => {
