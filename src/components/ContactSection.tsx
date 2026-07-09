@@ -2,11 +2,11 @@ import { Mail, Phone, MapPin, Linkedin, Github, Copy, Check, Send, ArrowUpRight 
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 
-// ✏️ Replace with your real contact details
+// Contact details
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'you@example.com', href: 'mailto:you@example.com', copyable: true, subtext: null as string | null },
-  { icon: Phone, label: 'Phone', value: '+1 000 000 0000', href: 'tel:+10000000000', copyable: true, subtext: null as string | null },
-  { icon: MapPin, label: 'Location', value: 'City, State, Country', href: null as string | null, copyable: false, subtext: 'Open to Relocation' },
+  { icon: Mail, label: 'Email', value: 'sushmithakatherine1@gmail.com', href: 'mailto:sushmithakatherine1@gmail.com', copyable: true, subtext: null as string | null },
+  { icon: Phone, label: 'Phone', value: '+1 857-381-2970', href: 'tel:+18573812970', copyable: true, subtext: null as string | null },
+  { icon: MapPin, label: 'Location', value: 'Boston, MA, USA', href: null as string | null, copyable: false, subtext: 'Open to Relocation' },
 ];
 
 const ContactSection = () => {
@@ -94,11 +94,10 @@ const ContactSection = () => {
               <div className="pt-4">
                 <p className="text-sm font-semibold text-muted-foreground mb-4">Connect on Social Media</p>
                 <div className="flex gap-4">
-                  {/* ✏️ update hrefs */}
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary/50 border border-border hover:border-primary/40 hover:bg-primary/10 transition-all duration-300" aria-label="GitHub">
+                  <a href="https://github.com/sushmitha-lab" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary/50 border border-border hover:border-primary/40 hover:bg-primary/10 transition-all duration-300" aria-label="GitHub">
                     <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                   </a>
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary/50 border border-border hover:border-primary/40 hover:bg-primary/10 transition-all duration-300" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/sushmitha-katherine-69387b189/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary/50 border border-border hover:border-primary/40 hover:bg-primary/10 transition-all duration-300" aria-label="LinkedIn">
                     <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
                   </a>
                 </div>
