@@ -25,7 +25,7 @@ const educationData = [
   {
     degree: 'B.E. in Information Science Engineering',
     institution: 'Visvesvaraya Technological University',
-    logo: '/education/vtu-seal.jpeg',
+    logo: '/education/vtu-seal.png',
     location: 'India',
     period: 'Aug 2016 – Aug 2020',
     status: 'Completed',
@@ -119,7 +119,7 @@ const EducationSection = () => {
 
                   <div className="flex items-start gap-4">
                     {/* University seal */}
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-white p-2 flex items-center justify-center shrink-0 border border-border/30">
+                    <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shrink-0">
                       <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" />
                     </div>
 

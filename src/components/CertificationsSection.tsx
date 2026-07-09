@@ -43,8 +43,8 @@ const CertificationsSection = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <div className="w-14 h-14 rounded-xl bg-white p-2 flex items-center justify-center mb-4">
-                <img src={cert.logo} alt={cert.name} className="w-full h-full object-contain" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4">
+                <img src={cert.logo} alt={cert.name} className="max-w-full max-h-full object-contain" />
               </div>
 
               <h3 className="text-base font-semibold mb-4" style={{ color: '#E5E7EB' }}>{cert.name}</h3>
