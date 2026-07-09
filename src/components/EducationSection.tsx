@@ -1,33 +1,27 @@
 import { GraduationCap, Calendar, MapPin, BookOpen } from 'lucide-react';
 
-// ✏️ Coursework lists are placeholders — swap in your actual courses
+// ✏️ Replace with your real education history
 const educationData = [
   {
-    degree: "Master's in Data Analytics, Conc. Applied Machine Learning",
-    institution: 'Northeastern University',
-    location: 'Boston, MA',
-    period: 'Sep 2024 – Jun 2026',
-    status: 'Completed',
-    current: false,
-    coursework: ['Data Analytics', 'Applied Machine Learning'],
+    degree: 'Degree Name',
+    institution: 'Institution Name',
+    location: 'City, Country',
+    period: 'Month Year – Month Year',
+    status: 'Currently Pursuing',
+    current: true,
+    coursework: ['Course One', 'Course Two', 'Course Three'],
     bgColor: '#0E2A26',
   },
   {
-    degree: 'B.E. in Information Science Engineering',
-    institution: 'Visvesvaraya Technological University',
-    location: 'India',
-    period: 'Aug 2016 – Aug 2020',
+    degree: 'Degree Name',
+    institution: 'Institution Name',
+    location: 'City, Country',
+    period: 'Month Year – Month Year',
     status: 'Completed',
     current: false,
-    coursework: ['Information Science', 'Engineering Fundamentals'],
+    coursework: ['Course One', 'Course Two', 'Course Three'],
     bgColor: '#0B1F2E',
   },
-];
-
-// Decorative floating graduation caps — positioned opposite each card on the timeline
-const decorativeCaps = [
-  { top: '18%', right: '12%', delay: '0s', rotation: 'rotate-6' },
-  { top: '65%', left: '12%', delay: '1s', rotation: '-rotate-6' },
 ];
 
 const EducationSection = () => {
@@ -37,17 +31,6 @@ const EducationSection = () => {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} />
       </div>
-
-      {/* Decorative floating graduation caps */}
-      {decorativeCaps.map((cap, index) => (
-        <div
-          key={index}
-          className={`absolute w-24 h-24 opacity-50 ${cap.rotation} hidden md:block pointer-events-none animate-float`}
-          style={{ top: cap.top, left: cap.left, right: cap.right, animationDelay: cap.delay, animationDuration: '5s' }}
-        >
-          <GraduationCap className="w-full h-full" style={{ color: '#1FB6C9' }} />
-        </div>
-      ))}
 
       <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16">
@@ -65,17 +48,6 @@ const EducationSection = () => {
 
         <div className="max-w-6xl mx-auto relative">
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden md:block" style={{ backgroundColor: 'rgba(31, 182, 201, 0.4)' }} />
-
-          <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center justify-center z-10" style={{ top: '50%', transform: 'translate(-50%, -50%)' }}>
-            <div className="animate-float" style={{ animationDuration: '4s' }}>
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center animate-pulse-glow"
-                style={{ backgroundColor: 'rgba(31, 182, 201, 0.2)', border: '2px solid rgba(31, 182, 201, 0.5)' }}
-              >
-                <GraduationCap className="w-7 h-7" style={{ color: '#5EE7F0' }} />
-              </div>
-            </div>
-          </div>
 
           <div className="space-y-8 md:space-y-0">
             {educationData.map((edu, index) => (

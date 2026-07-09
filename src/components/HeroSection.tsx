@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react';
 
 // ✏️ Rotating role titles shown under your name
 const roles = [
-  "Data Analyst",
-  "Data Engineer",
-  "Business Intelligence",
-  "Data Scientist",
+  "Data Analytics Engineer",
+  "Cloud Data Engineer",
+  "BI & Analytics Specialist",
 ];
 
 const HeroSection = () => {
@@ -106,17 +105,14 @@ const HeroSection = () => {
               Decoding Data. Delivering Direction.
             </p>
 
-            {/* Summary */}
+            {/* Summary — ✏️ replace with your own bio */}
             <div className="space-y-2">
               <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-                I build Python and SQL-driven analytical tools and data models — including hands-on
-                work with loan-level real estate and mortgage risk data. Over 4+ years, I've partnered
-                with cross-functional stakeholders across enterprise engagements to turn raw, ambiguous
-                data into governed, quality-controlled solutions, with Tableau and Power BI dashboards
-                that make it usable.
+                A short paragraph describing what you do, the kind of work you build, and the impact
+                you've had — written in your own voice, two to three sentences long.
               </p>
               <p className="text-sm text-muted-foreground/70">
-                M.S. in Data Analytics, Northeastern University · Open to full-time roles
+                Currently pursuing / working on — add your current status here.
               </p>
             </div>
 
@@ -129,6 +125,7 @@ const HeroSection = () => {
                 </a>
               </Button>
               <Button variant="heroOutline" size="lg" className="group" asChild>
+                {/* ✏️ point this at your resume file */}
                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
                   Resume
@@ -142,10 +139,10 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Social Icons */}
+            {/* Social Icons — ✏️ update hrefs */}
             <div className="flex items-center gap-4 pt-2">
               <a
-                href="https://www.linkedin.com/in/sushmitha-katherine-69387b189/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-lg bg-secondary/50 border border-border/50 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
@@ -154,7 +151,7 @@ const HeroSection = () => {
                 <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
               </a>
               <a
-                href="https://github.com/sushmitha-lab"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-lg bg-secondary/50 border border-border/50 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
@@ -163,7 +160,7 @@ const HeroSection = () => {
                 <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
               </a>
               <a
-                href="mailto:sushmithakatherine1@gmail.com"
+                href="mailto:you@example.com"
                 className="p-2.5 rounded-lg bg-secondary/50 border border-border/50 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
                 aria-label="Email"
               >
@@ -174,12 +171,12 @@ const HeroSection = () => {
             {/* Availability */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
               <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-sm text-green-400/90 font-normal">Open to full-time roles</span>
+              <span className="text-sm text-green-400/90 font-normal">Available for opportunities</span>
             </div>
 
-            {/* Tech Stack Pills */}
+            {/* ✏️ Tech Stack Pills */}
             <div className="flex flex-wrap gap-2 pt-2">
-              {['Python', 'SQL', 'Tableau', 'Power BI', 'AWS', 'Databricks', 'Azure'].map((tech) => (
+              {['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4', 'Skill 5'].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1.5 text-xs font-medium bg-secondary/80 border border-border/50 rounded-full text-muted-foreground backdrop-blur-sm hover:border-primary/30 hover:text-foreground transition-colors cursor-default"
@@ -204,11 +201,8 @@ const HeroSection = () => {
               />
 
               <div className="absolute inset-5 rounded-full bg-gradient-to-br from-card via-card to-secondary border-2 border-border/50 overflow-hidden shadow-2xl shadow-primary/20 flex items-center justify-center">
-                <img
-                  src="/photo.jpg"
-                  alt="Sushmitha Katherine Jayaraj"
-                  className="w-full h-full object-cover object-center"
-                />
+                {/* ✏️ replace with <img src="/your-photo.jpg" alt="Sushmitha Katherine Jayaraj" className="w-full h-full object-cover object-center" /> */}
+                <User className="w-20 h-20 text-border" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
               </div>
 

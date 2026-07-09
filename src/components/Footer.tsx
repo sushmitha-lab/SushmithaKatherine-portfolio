@@ -14,14 +14,15 @@ const Footer = () => {
           <div className="text-center">
             <h3 className="text-2xl font-bold gradient-text mb-2">Sushmitha Katherine Jayaraj</h3>
             {/* ✏️ update specialties */}
-            <p className="text-sm text-muted-foreground">Data Analyst • Data Engineer • Business Intelligence</p>
+            <p className="text-sm text-muted-foreground">Data Analytics Engineer • Specialty One • Specialty Two</p>
           </div>
 
           <div className="flex items-center gap-4">
+            {/* ✏️ update hrefs */}
             {[
-              { icon: Github, href: 'https://github.com/sushmitha-lab', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://www.linkedin.com/in/sushmitha-katherine-69387b189/', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:sushmithakatherine1@gmail.com', label: 'Email' },
+              { icon: Github, href: '#', label: 'GitHub' },
+              { icon: Linkedin, href: '#', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:you@example.com', label: 'Email' },
             ].map((social, index) => (
               <a
                 key={index}
