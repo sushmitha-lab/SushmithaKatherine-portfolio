@@ -1,42 +1,57 @@
-import { Briefcase, Zap, BarChart3, Sparkles, Trophy, CheckCircle, GitBranch, Database, Workflow, Shield } from 'lucide-react';
+import { Briefcase, Zap, BarChart3, Sparkles, Shield, Search, Activity, Layers } from 'lucide-react';
 import { useState } from 'react';
 
-// ✏️ Replace with your real roles
 const experiences = [
   {
-    title: 'Your Job Title',
-    company: 'Company Name',
-    location: 'City, Country',
-    period: 'Month Year – Present',
-    signatureImpact: 'One-line summary of your signature impact in this role.',
-    subtitle: 'A short supporting line — scope, scale, or key metric.',
-    techStack: 'Tool 1 · Tool 2 · Tool 3 · Tool 4',
-    recognition: {
-      title: 'Award or Recognition Name',
-      description: 'Short description of why you received it.',
-    },
+    title: 'Data Engineer Intern',
+    company: 'Dell Technologies',
+    logo: '/logos/dell.jpeg',
+    location: 'Franklin, MA',
+    period: 'Jul 2025 – Dec 2025',
+    signatureImpact: 'Built dbt-based data models translating stakeholder requirements into structured, tested, documented analytical datasets.',
+    subtitle: 'Large-scale manufacturing datasets · Automated data quality frameworks · Self-service Power BI dashboards',
+    techStack: 'Python · SQL · dbt · Power BI',
+    recognition: null as null | { title: string; description: string },
     highlights: [
-      { icon: Zap, title: 'Achievement headline · Metric' },
-      { icon: Workflow, title: 'Achievement headline · Metric' },
-      { icon: Shield, title: 'Achievement headline · Metric' },
+      { icon: Layers, title: 'dbt Models · Structured & Tested Data' },
+      { icon: Shield, title: 'Automated QA · Multi-Source Observability' },
+      { icon: BarChart3, title: 'Power BI · Self-Service KPIs' },
     ],
     bgColor: '#0E2A3A',
   },
   {
-    title: 'Previous Job Title',
-    company: 'Company Name',
-    location: 'City, Country',
-    period: 'Month Year – Month Year',
-    signatureImpact: 'One-line summary of your signature impact in this role.',
-    subtitle: 'A short supporting line — scope, scale, or key metric.',
-    techStack: 'Tool 1 · Tool 2 · Tool 3',
+    title: 'Data Analyst',
+    company: 'Deloitte',
+    logo: '/logos/deloitte.png',
+    location: 'Hyderabad, India',
+    period: 'Feb 2022 – Sep 2024',
+    signatureImpact: 'Built scalable ELT pipelines processing 10M+ records per run across 3 enterprise client engagements.',
+    subtitle: 'Multi-source financial & operational data · Measurement frameworks · Tableau & Power BI dashboards',
+    techStack: 'Python · SQL · Tableau · Power BI',
     recognition: null as null | { title: string; description: string },
     highlights: [
-      { icon: Zap, title: 'Achievement headline · Metric' },
-      { icon: BarChart3, title: 'Achievement headline · Metric' },
-      { icon: CheckCircle, title: 'Achievement headline · Metric' },
+      { icon: Zap, title: 'ELT Pipelines · 10M+ Records/Run' },
+      { icon: Sparkles, title: '3 Enterprise Engagements · Stakeholder Alignment' },
+      { icon: BarChart3, title: 'Dashboards · Reduced Time-to-Insight' },
     ],
     bgColor: '#0B1F2E',
+  },
+  {
+    title: 'Risk Quality Analyst',
+    company: 'Amazon',
+    logo: '/logos/amazon.webp',
+    location: 'Bangalore, India',
+    period: 'Sep 2020 – Feb 2022',
+    signatureImpact: 'Built end-to-end data pipelines on 100M+ operational records enabling data-driven resource and capacity planning.',
+    subtitle: 'Refund abuse pattern detection · Full analytics infrastructure ownership',
+    techStack: 'Python · SQL',
+    recognition: null as null | { title: string; description: string },
+    highlights: [
+      { icon: Search, title: 'Anomaly Detection · Refund Abuse Patterns' },
+      { icon: Activity, title: '100M+ Records · End-to-End Pipelines' },
+      { icon: Shield, title: 'Full Infra Ownership · Monitoring & QA' },
+    ],
+    bgColor: '#0B1220',
   },
 ];
 
@@ -60,8 +75,7 @@ const ExperienceSection = () => {
             Professional <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {/* ✏️ your one-line career summary */}
-            Describe the throughline of your career journey in one sentence here.
+            Building governed, decision-ready data systems across manufacturing, consulting, and e-commerce.
           </p>
         </div>
 
@@ -103,7 +117,12 @@ const ExperienceSection = () => {
                           <span className="px-2 py-0.5 text-xs font-semibold bg-primary/20 text-primary rounded-full">Latest</span>
                         )}
                       </div>
-                      <p className="text-primary font-semibold text-lg">{exp.company}</p>
+                      <div className="flex items-center gap-3">
+                        <div className="h-7 px-1.5 rounded-md bg-white flex items-center justify-center">
+                          <img src={exp.logo} alt={exp.company} className="h-5 w-auto object-contain" />
+                        </div>
+                        <p className="text-primary font-semibold text-lg">{exp.company}</p>
+                      </div>
                     </div>
                     <div className="flex flex-col items-end gap-1">
                       <span className="px-4 py-1.5 rounded-full text-sm font-normal" style={{ backgroundColor: 'rgba(255,255,255,0.05)', color: '#B6C6D3' }}>
@@ -119,7 +138,7 @@ const ExperienceSection = () => {
                     <span className="font-medium">Tech Stack:</span> {exp.techStack}
                   </p>
 
-                  <div className={`grid gap-3 mb-5 ${exp.highlights.length > 3 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'sm:grid-cols-3'}`}>
+                  <div className="grid gap-3 mb-5 sm:grid-cols-3">
                     {exp.highlights.map((highlight, hIndex) => (
                       <div key={hIndex} className="group relative p-3 rounded-xl border border-border/30 hover:border-primary/20 transition-all duration-300" style={{ backgroundColor: 'rgba(11, 18, 32, 0.5)' }}>
                         <div className="flex items-center gap-2">
@@ -131,16 +150,6 @@ const ExperienceSection = () => {
                       </div>
                     ))}
                   </div>
-
-                  {exp.recognition && (
-                    <div className="flex items-start gap-3 p-3 rounded-xl border mt-2" style={{ backgroundColor: '#0F2430', borderColor: 'rgba(245, 194, 107, 0.2)', boxShadow: '0 0 10px rgba(245, 194, 107, 0.08)' }}>
-                      <Trophy className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#F5C26B' }} />
-                      <div>
-                        <p className="text-sm font-semibold" style={{ color: '#B6C6D3' }}>{exp.recognition.title}</p>
-                        <p className="text-xs mt-0.5" style={{ color: '#9CA3AF' }}>{exp.recognition.description}</p>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -151,8 +160,7 @@ const ExperienceSection = () => {
           <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground">
-              {/* ✏️ update years */}
-              <span className="text-primary font-semibold">4+ years</span> of turning ideas into results
+              <span className="text-primary font-semibold">4+ years</span> across Amazon, Deloitte, and Dell
             </span>
           </div>
         </div>
