@@ -1,4 +1,4 @@
-import { Briefcase, Zap, BarChart3, Sparkles, Shield, Search, Activity, Layers } from 'lucide-react';
+import { Briefcase, Zap, BarChart3, Sparkles, Shield, Search, Activity, Layers, Trophy } from 'lucide-react';
 import { useState } from 'react';
 
 const experiences = [
@@ -11,7 +11,7 @@ const experiences = [
     signatureImpact: 'Built dbt-based data models translating stakeholder requirements into structured, tested, documented analytical datasets.',
     subtitle: 'Large-scale manufacturing datasets · Automated data quality frameworks · Self-service Power BI dashboards',
     techStack: 'Python · SQL · dbt · Power BI',
-    recognition: null as null | { title: string; description: string },
+    recognition: null as { title: string; description: string }[] | null,
     highlights: [
       { icon: Layers, title: 'dbt Models · Structured & Tested Data' },
       { icon: Shield, title: 'Automated QA · Multi-Source Observability' },
@@ -28,7 +28,10 @@ const experiences = [
     signatureImpact: 'Built scalable ELT pipelines processing 10M+ records per run across 3 enterprise client engagements.',
     subtitle: 'Multi-source financial & operational data · Measurement frameworks · Tableau & Power BI dashboards',
     techStack: 'Python · SQL · Tableau · Power BI',
-    recognition: null as null | { title: string; description: string },
+    recognition: [
+      { title: 'FY24 SPOT Award', description: 'Recognized for delivering exceptional client requirements.' },
+      { title: 'FY25 SPOT Award', description: 'Recognized for delivering exceptional client requirements.' },
+    ] as { title: string; description: string }[] | null,
     highlights: [
       { icon: Zap, title: 'ELT Pipelines · 10M+ Records/Run' },
       { icon: Sparkles, title: '3 Enterprise Engagements · Stakeholder Alignment' },
@@ -45,7 +48,7 @@ const experiences = [
     signatureImpact: 'Built end-to-end data pipelines on 100M+ operational records enabling data-driven resource and capacity planning.',
     subtitle: 'Refund abuse pattern detection · Full analytics infrastructure ownership',
     techStack: 'Python · SQL',
-    recognition: null as null | { title: string; description: string },
+    recognition: null as { title: string; description: string }[] | null,
     highlights: [
       { icon: Search, title: 'Anomaly Detection · Refund Abuse Patterns' },
       { icon: Activity, title: '100M+ Records · End-to-End Pipelines' },
@@ -148,6 +151,24 @@ const ExperienceSection = () => {
                       </div>
                     ))}
                   </div>
+
+                  {exp.recognition && (
+                    <div className="space-y-2">
+                      {exp.recognition.map((award, aIndex) => (
+                        <div
+                          key={aIndex}
+                          className="flex items-start gap-3 p-3 rounded-xl border"
+                          style={{ backgroundColor: '#0F2430', borderColor: 'rgba(245, 194, 107, 0.2)', boxShadow: '0 0 10px rgba(245, 194, 107, 0.08)' }}
+                        >
+                          <Trophy className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#F5C26B' }} />
+                          <div>
+                            <p className="text-sm font-semibold" style={{ color: '#B6C6D3' }}>{award.title}</p>
+                            <p className="text-xs mt-0.5" style={{ color: '#9CA3AF' }}>{award.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

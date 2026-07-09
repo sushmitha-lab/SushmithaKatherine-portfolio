@@ -1,9 +1,9 @@
-import { Award, ArrowRight, BadgeCheck } from 'lucide-react';
+import { Award, ArrowRight } from 'lucide-react';
 
 const certifications = [
-  { name: 'Alteryx Designer Core', credentialLink: 'https://www.credly.com/badges/e9ac12de-1592-4f93-806c-ea0f1b8a129d' },
-  { name: 'Python Programming — HackerRank', credentialLink: 'https://www.hackerrank.com/certificates/17b1ee641110' },
-  { name: 'SQL (Advanced) — HackerRank', credentialLink: 'https://www.hackerrank.com/certificates/iframe/59169eb44b89' },
+  { name: 'Alteryx Designer Core', logo: '/certs/alteryx.png', credentialLink: 'https://www.credly.com/badges/e9ac12de-1592-4f93-806c-ea0f1b8a129d' },
+  { name: 'Python Programming — HackerRank', logo: '/certs/python.png', credentialLink: 'https://www.hackerrank.com/certificates/17b1ee641110' },
+  { name: 'SQL (Advanced) — HackerRank', logo: '/certs/sql.webp', credentialLink: 'https://www.hackerrank.com/certificates/iframe/59169eb44b89' },
 ];
 
 const CertificationsSection = () => {
@@ -44,7 +44,7 @@ const CertificationsSection = () => {
               }}
             >
               <div className="w-14 h-14 rounded-xl bg-white p-2 flex items-center justify-center mb-4">
-                <BadgeCheck className="w-full h-full text-slate-700" />
+                <img src={cert.logo} alt={cert.name} className="w-full h-full object-contain" />
               </div>
 
               <h3 className="text-base font-semibold mb-4" style={{ color: '#E5E7EB' }}>{cert.name}</h3>

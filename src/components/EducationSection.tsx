@@ -5,6 +5,7 @@ const educationData = [
   {
     degree: "Master's in Data Analytics, Conc. Applied Machine Learning",
     institution: 'Northeastern University',
+    logo: '/education/neu-seal.png',
     location: 'Boston, MA',
     period: 'Sep 2024 – Jun 2026',
     status: 'Completed',
@@ -15,6 +16,7 @@ const educationData = [
   {
     degree: 'B.E. in Information Science Engineering',
     institution: 'Visvesvaraya Technological University',
+    logo: '/education/vtu-seal.jpeg',
     location: 'India',
     period: 'Aug 2016 – Aug 2020',
     status: 'Completed',
@@ -107,9 +109,9 @@ const EducationSection = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    {/* ✏️ replace with <img src="/schools/logo.png" ... /> */}
+                    {/* University seal */}
                     <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-white p-2 flex items-center justify-center shrink-0 border border-border/30">
-                      <GraduationCap className="w-full h-full text-slate-700" />
+                      <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" />
                     </div>
 
                     <div className="flex-1">
