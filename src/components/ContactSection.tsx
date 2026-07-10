@@ -2,6 +2,8 @@ import { Mail, Phone, MapPin, Linkedin, Github, Copy, Check, Send, ArrowUpRight 
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvdgpby';
+
 // Contact details
 const contactInfo = [
   { icon: Mail, label: 'Email', value: 'sushmithakatherine1@gmail.com', href: 'mailto:sushmithakatherine1@gmail.com', copyable: true, subtext: null as string | null },
@@ -12,6 +14,8 @@ const contactInfo = [
 const ContactSection = () => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleCopy = (text: string, index: number) => {
@@ -20,13 +24,33 @@ const ContactSection = () => {
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // ✏️ This form doesn't send anywhere yet. Wire it up to a service like
-    // Formspree, EmailJS, or your own API endpoint, then replace this handler.
-    setSubmitted(true);
-    formRef.current?.reset();
-    setTimeout(() => setSubmitted(false), 3000);
+    setError(false);
+    setSending(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => setSubmitted(false), 4000);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -115,19 +139,19 @@ const ContactSection = () => {
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Name <span className="text-primary">*</span></label>
-                  <input type="text" id="name" name="from_name" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground" placeholder="Your name" />
+                  <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground" placeholder="Your name" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">Email <span className="text-primary">*</span></label>
-                  <input type="email" id="email" name="from_email" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground" placeholder="your.email@example.com" />
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground" placeholder="your.email@example.com" />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">Message <span className="text-primary">*</span></label>
                   <textarea id="message" name="message" required rows={5} className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground resize-none" placeholder="Briefly tell me what you'd like to connect about…" />
                 </div>
 
-                <Button type="submit" variant="hero" size="lg" className="w-full">
-                  {submitted ? 'Message noted (demo only)' : 'Send Message'}
+                <Button type="submit" variant="hero" size="lg" className="w-full" disabled={sending}>
+                  {sending ? 'Sending…' : submitted ? 'Message sent ✓' : error ? 'Something went wrong — try again' : 'Send Message'}
                   <ArrowUpRight className="w-4 h-4 ml-2" />
                 </Button>
               </form>
