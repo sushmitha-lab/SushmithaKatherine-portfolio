@@ -35,6 +35,14 @@ const projects = [
     technologies: ['Tableau', 'Data Visualization', 'CSV'],
     link: 'https://github.com/sushmitha-lab/Global-power-dynamics-tableau',
   },
+  {
+    title: 'DocBrief',
+    subtitle: 'AI-assisted clinical evidence synthesis with RAG',
+    image: '/projects/docbrief-art.svg',
+    description: 'Built a clinical decision support RAG pipeline: doctors enter patient symptoms and history, a vector search retrieves the most relevant clinical guidelines from a knowledge base of 18 guidelines across 8 medical domains, and an LLM synthesizes the evidence into a structured assessment with inline citations — reducing hours of literature review to seconds.',
+    technologies: ['React', 'TypeScript', 'FastAPI', 'Groq (Llama 3)', 'ChromaDB'],
+    link: 'https://github.com/sushmitha-lab/Docbrief-app',
+  },
 ];
 
 const ProjectsSection = () => {
