@@ -1,8 +1,17 @@
-import { Layers, ArrowRight, Github, Image as ImageIcon } from 'lucide-react';
+import { Layers, ArrowRight, Github, Image as ImageIcon, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
 const projects = [
+  {
+    title: 'Boston Care Costs — Hospital Price Transparency',
+    subtitle: 'Comparing hospital cash prices from federally mandated pricing files',
+    image: '/projects/boston-care-costs-screenshot.png',
+    description: 'Built an end-to-end pipeline ingesting 358K+ standard charge rows from federally mandated pricing files across 3 Boston hospitals, normalized into a dbt and DuckDB star schema with automated data-quality scoring, surfaced through a live React app revealing shared system pricing at Mass General Brigham and a 5x gap in price disclosure rates between hospital systems.',
+    technologies: ['Python', 'dbt', 'DuckDB', 'Polars', 'GitHub Actions', 'React', 'Vercel'],
+    link: 'https://boston-care-costs.vercel.app',
+    githubLink: 'https://github.com/sushmitha-lab/Boston-care-costs',
+  },
   {
     title: 'Freddie Mac Mortgage Risk Analytics',
     subtitle: 'End-to-end mortgage risk data pipeline with dimensional modeling',
@@ -114,15 +123,27 @@ const ProjectsSection = () => {
                     <Button
                       size="sm"
                       asChild
-                      className="w-full text-primary-foreground border-0"
+                      className="flex-1 text-primary-foreground border-0"
                       style={{ backgroundColor: 'rgba(31, 182, 201, 0.25)', color: '#B6C6D3' }}
                     >
                       <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:bg-primary/35 transition-colors">
-                        <Github className="w-4 h-4" />
-                        View on GitHub
+                        {(project as any).githubLink ? <ExternalLink className="w-4 h-4" /> : <Github className="w-4 h-4" />}
+                        {(project as any).githubLink ? 'View Live' : 'View on GitHub'}
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </a>
                     </Button>
+                    {(project as any).githubLink && (
+                      <Button
+                        size="sm"
+                        asChild
+                        className="border-0"
+                        style={{ backgroundColor: 'rgba(31, 182, 201, 0.25)', color: '#B6C6D3' }}
+                      >
+                        <a href={(project as any).githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-3 hover:bg-primary/35 transition-colors">
+                          <Github className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
