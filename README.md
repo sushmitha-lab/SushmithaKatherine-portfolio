@@ -22,13 +22,13 @@ Decoding Data. Delivering Direction.
 
 ---
 
-## About
+## ✨ About
 
 A personal portfolio built from the ground up to showcase 4+ years of experience turning messy,
 large-scale data into governed, decision-ready systems — across mortgage risk analytics, cloud
 ELT pipelines, e-commerce intelligence platforms, and clinical AI tools.
 
-## Sections
+## 🧭 Sections
 
 | Section | What's there |
 |---|---|
@@ -40,7 +40,7 @@ ELT pipelines, e-commerce intelligence platforms, and clinical AI tools.
 | **Education** | M.S. Data Analytics @ Northeastern University · B.E. Information Science Engineering @ VTU |
 | **Contact** | Real contact info + working contact form (Formspree) |
 
-## Built With
+## 🛠️ Built With
 
 - **[React 18](https://react.dev/)** + **[TypeScript](https://www.typescriptlang.org/)**
 - **[Vite](https://vitejs.dev/)** — build tooling
@@ -49,7 +49,7 @@ ELT pipelines, e-commerce intelligence platforms, and clinical AI tools.
 - **[lucide-react](https://lucide.dev/)** — icons
 - **[Formspree](https://formspree.io/)** — contact form backend, zero custom server
 
-## Getting Started
+## 🚀 Getting Started
 
 ```bash
 git clone https://github.com/sushmitha-lab/SushmithaKatherine-portfolio.git
@@ -65,7 +65,7 @@ Open the printed localhost URL (usually `http://localhost:5173`).
 npm run build
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
@@ -97,7 +97,7 @@ public/
 Submissions go through [Formspree](https://formspree.io/) — see the `FORMSPREE_ENDPOINT`
 constant in `ContactSection.tsx`. Free tier, no backend required.
 
-## License
+## 📄 License
 
 Personal project — feel free to use the structure as a reference for your own portfolio.
 

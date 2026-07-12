@@ -144,3 +144,58 @@
 ::-webkit-scrollbar-track { background: hsl(var(--background)); }
 ::-webkit-scrollbar-thumb { background: hsl(var(--muted)); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+
+/* ============ PRINT / PDF EXPORT ============ */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Fixed nav becomes a normal element so it doesn't overlap/repeat on every page */
+  header {
+    position: static !important;
+  }
+  .mobile-menu,
+  .hamburger {
+    display: none !important;
+  }
+
+  /* Hide decorative/animated elements that don't add value on paper */
+  .particle,
+  .scroll-cue,
+  .blob,
+  [class*="animate-"] {
+    animation: none !important;
+  }
+  .hero-lines,
+  section .absolute.inset-0 svg {
+    display: none !important;
+  }
+
+  /* Avoid splitting cards/sections awkwardly across a page break */
+  section,
+  .tl-card,
+  .proj-card,
+  .skill-card,
+  .cert-card,
+  .edu-card {
+    break-inside: avoid;
+  }
+
+  /* Tighten spacing since paper is precious real estate */
+  section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+
+  body {
+    background: hsl(var(--background)) !important;
+  }
+}
+
